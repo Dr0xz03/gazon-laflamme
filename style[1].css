@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f5fff5;
+    color: #2d2d2d;
+}
+
+header.hero {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    text-align: center;
+    padding: 3rem 1rem;
+    color: white;
+    border-bottom: 4px solid #388E3C;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+section {
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.card i {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: #e8f5e9;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
