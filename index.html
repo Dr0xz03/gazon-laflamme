@@ -1,53 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gazon Laflamme</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gazon Laflamme</title>
+
+  <style>
+    /* Dégradé de fond riche */
+    body {
+      background: linear-gradient(135deg, #2a7a2a, #4caf50, #81c784);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    p.slogan {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    p.presentation {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-bottom: 3em;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .btn-service {
+      background: #1b5e20;
+      color: white;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.4rem;
+      box-shadow: 0 5px 15px rgba(27, 94, 32, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .btn-service:hover, .btn-service:focus {
+      background: #66bb6a;
+      box-shadow: 0 8px 20px rgba(102, 187, 106, 0.8);
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      p.slogan {
+        font-size: 1.2rem;
+      }
+      p.presentation {
+        font-size: 1.1rem;
+        padding: 0 10px;
+      }
+      .btn-service {
+        font-size: 1.2rem;
+        padding: 14px 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="hero">
-        <img src="eba535ee-4285-4b84-bd1b-3ae731481236.png" alt="Logo Gazon Laflamme" class="logo" />
-        <h1>Gazon Laflamme</h1>
-        <p class="slogan">Pour un gazon qui enflamme le voisinage</p>
-    </header>
+  <h1>Gazon Laflamme</h1>
+  <p class="slogan">Pour un gazon qui enflamme le voisinage</p>
 
-    <section class="about">
-        <h2>À propos</h2>
-        <p>Je m’appelle Charles, je suis un jeune travaillant qui est prêt à répondre à vos besoins en entretien paysager et ménager. Sérieux, ponctuel, et passionné par le travail bien fait.</p>
-    </section>
+  <p class="presentation">
+    Bonjour! Je suis Charles, un jeune travailleur passionné prêt à répondre à tous vos besoins pour un gazon impeccable et un extérieur soigné.  
+    Que ce soit pour la tonte, le lavage d’auto, la semence ou le ramassage de feuilles, je suis là pour vous aider à embellir votre terrain.
+  </p>
 
-    <section class="services">
-        <h2>Services offerts</h2>
-        <div class="cards">
-            <div class="card"><i class="fas fa-tractor"></i><h3>Tonte de gazon</h3></div>
-            <div class="card"><i class="fas fa-seedling"></i><h3>Semence de gazon</h3></div>
-            <div class="card"><i class="fas fa-car"></i><h3>Lavage d’auto</h3></div>
-            <div class="card"><i class="fas fa-leaf"></i><h3>Ramassage de feuilles</h3></div>
-            <div class="card"><i class="fas fa-tools"></i><h3>Autres petits travaux extérieurs</h3></div>
-        </div>
-    </section>
-
-    <section class="tarifs">
-        <h2>Tarifs</h2>
-        <p>Tarifs à déterminer selon les services demandés.</p>
-    </section>
-
-    <section class="zone">
-        <h2>Zone desservie</h2>
-        <p>Escarpement Limbour</p>
-    </section>
-
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Pour me contacter : <a href="mailto:charleslaflamme10@gmail.com">charleslaflamme10@gmail.com</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Gazon Laflamme — Tous droits réservés</p>
-    </footer>
+  <a class="btn-service" href="mailto:charleslaflamme10@gmail.com?subject=Demande%20de%20service">Demander un service</a>
 </body>
 </html>
