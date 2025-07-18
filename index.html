@@ -6,7 +6,6 @@
   <title>Gazon Laflamme</title>
 
   <style>
-    /* Dégradé de fond riche */
     body {
       background: linear-gradient(135deg, #2a7a2a, #4caf50, #81c784);
       color: white;
@@ -18,6 +17,13 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+
+    img.logo {
+      max-width: 160px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     h1 {
@@ -34,12 +40,32 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
-    p.presentation {
-      font-size: 1.3rem;
-      max-width: 600px;
+    section {
+      max-width: 700px;
       margin-bottom: 3em;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5em;
+      border-bottom: 2px solid #66bb6a;
+      padding-bottom: 6px;
+    }
+
+    p, li {
+      font-size: 1.3rem;
       line-height: 1.6;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      margin-bottom: 0.8em;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      list-style-type: disc;
     }
 
     .btn-service {
@@ -53,6 +79,8 @@
       box-shadow: 0 5px 15px rgba(27, 94, 32, 0.6);
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
+      margin-top: 10px;
+      display: inline-block;
     }
     .btn-service:hover, .btn-service:focus {
       background: #66bb6a;
@@ -61,16 +89,24 @@
     }
 
     /* Responsive */
-    @media (max-width: 480px) {
+    @media (max-width: 760px) {
+      body {
+        padding: 20px 10px;
+      }
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
       p.slogan {
         font-size: 1.2rem;
       }
-      p.presentation {
+      section {
+        padding: 15px 20px;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+      p, li {
         font-size: 1.1rem;
-        padding: 0 10px;
       }
       .btn-service {
         font-size: 1.2rem;
@@ -81,13 +117,46 @@
 </head>
 
 <body>
+  <!-- Logo à remplacer par le chemin réel -->
+  <img class="logo" src="logo.png" alt="Logo Gazon Laflamme" />
+
   <h1>Gazon Laflamme</h1>
   <p class="slogan">Pour un gazon qui enflamme le voisinage</p>
 
-  <p class="presentation">
-    Bonjour! Je suis Charles, un jeune travailleur passionné prêt à répondre à tous vos besoins pour un gazon impeccable et un extérieur soigné.  
-    Que ce soit pour la tonte, le lavage d’auto, la semence ou le ramassage de feuilles, je suis là pour vous aider à embellir votre terrain.
-  </p>
+  <section id="presentation">
+    <h2>Présentation</h2>
+    <p>
+      Bonjour! Je suis Charles, un jeune travailleur passionné prêt à répondre à tous vos besoins pour un gazon impeccable et un extérieur soigné.  
+      Que ce soit pour la tonte, le lavage d’auto, la semence ou le ramassage de feuilles, je suis là pour vous aider à embellir votre terrain.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Services offerts</h2>
+    <ul>
+      <li>Tonte de gazon</li>
+      <li>Lavage d’auto</li>
+      <li>Semence de gazon</li>
+      <li>Ramassage de feuilles</li>
+      <li>Autres petits travaux extérieurs</li>
+    </ul>
+  </section>
+
+  <section id="tarifs">
+    <h2>Tarifs</h2>
+    <p>Les tarifs sont à déterminer. Contactez-moi pour un devis personnalisé.</p>
+  </section>
+
+  <section id="quartier">
+    <h2>Quartier desservi</h2>
+    <p>L’Escarpement Limbour et ses environs.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:charleslaflamme10@gmail.com" style="color:#a8e6a1;">charleslaflamme10@gmail.com</a></p>
+    <p>Téléphone : (438) 543-1113</p>
+  </section>
 
   <a class="btn-service" href="mailto:charleslaflamme10@gmail.com?subject=Demande%20de%20service">Demander un service</a>
 </body>
