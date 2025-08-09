@@ -1,371 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gazon Laflamme — Pour un gazon qui enflamme le voisinage</title>
-  <meta name="description" content="Services d'entretien extérieur : tonte, fertilisation, ramassage de feuilles et plus — Limbour, Hautes-Plaines, Templeton-Ouest." />
-  <style>
-    :root{
-      --green-600:#2e7d32;
-      --green-500:#4caf50;
-      --bg:#f6f8f6;
-      --card:#ffffff;
-      --muted:#656565;
-      --glass: rgba(255,255,255,0.7);
-      --radius-lg: 14px;
-      --radius-md: 8px;
-      --max-width:1100px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gazon Laflamme</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #4caf50;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  header h1 {
+    font-size: 1.8em;
+    color: white;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+  }
+  nav {
+    background: #388e3c;
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 2em;
+    color: #2e7d32;
+    border-bottom: 2px solid #2e7d32;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  .services, .temoignages, .realisations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+  }
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  .card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    font-weight: bold;
+  }
+  footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      text-align: center;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(180deg, #f8fbf8 0%, var(--bg) 100%);
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      scroll-behavior: smooth;
+    header h1 {
+      font-size: 1.5em;
     }
-    img{max-width:100%;display:block}
-
-    /* Header */
-    .site-header{
-      position:sticky; top:0; z-index:60;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(90deg, rgba(76,175,80,0.98), rgba(46,125,50,0.98));
-      color:#fff;
-      padding:10px 16px;
-      box-shadow: 0 6px 18px rgba(46,77,43,0.08);
+    nav a {
+      display: inline-block;
+      margin: 5px;
     }
-    .container{max-width:var(--max-width); margin:0 auto; padding:0 16px;}
-    .header-inner{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      flex-wrap:nowrap; /* important: keep items on one line */
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; flex:0 0 auto;
-    }
-    .logo{
-      width:64px; height:64px;
-      border-radius:12px;
-      object-fit:cover;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      background: rgba(255,255,255,0.12);
-      flex:0 0 auto;
-    }
-    .site-title{font-size:1.25rem; font-weight:800; letter-spacing:0.2px}
-    .site-sub{font-size:0.9rem; opacity:0.95}
-
-    nav.desktop-nav{display:flex; gap:18px; align-items:center;}
-    nav.desktop-nav a{color:white; text-decoration:none; font-weight:700; opacity:0.97}
-    .actions {display:flex; gap:10px; align-items:center; flex:0 0 auto;}
-
-    .cta-phone{
-      background: rgba(255,255,255,0.12);
-      padding:8px 12px; border-radius:999px; font-weight:800; font-size:0.95rem;
-      display:inline-flex; gap:8px; align-items:center;
-      text-decoration:none; color:white;
-      white-space:nowrap; /* important: avoid wrapping */
-    }
-
-    .mobile-toggle{display:none; border:0; background:transparent; color:white; font-size:24px}
-
-    /* Hero */
-    header.hero{
-      padding:36px 0; text-align:left;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-    }
-    .hero-grid{display:grid; grid-template-columns: 1fr 380px; gap:24px; align-items:center;}
-    .hero-title{font-size:2.6rem; margin:0 0 8px; color:var(--green-600); font-weight:900}
-    .hero-lead{margin:0 0 18px; color:var(--muted); font-size:1.05rem}
-    .hero-card{
-      background: linear-gradient(180deg, var(--card), var(--glass));
-      padding:18px; border-radius:12px; box-shadow: 0 8px 24px rgba(46,77,43,0.06);
-    }
-    .quick-list{display:flex; flex-direction:column; gap:8px; font-weight:700}
-
-    /* Sections */
-    section{padding:32px 0}
-    h2.section-title{color:var(--green-600); margin:0 0 12px; font-size:1.45rem; font-weight:800; border-bottom:3px solid rgba(46,125,50,0.08); padding-bottom:6px}
-    .grid{
-      display:grid; gap:16px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .card{
-      background:var(--card); padding:16px; border-radius:12px;
-      box-shadow:0 6px 18px rgba(11,22,11,0.04);
-      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
-    }
-    .card:hover{ transform: translateY(-6px); box-shadow:0 16px 40px rgba(11,22,11,0.07); }
-
-    .card h3 { margin-top:0; font-size:1.05rem; color:var(--green-600); font-weight:800 }
-    .card p { margin:8px 0 0; color:var(--muted); font-size:0.98rem; }
-
-    /* Testimonials */
-    .testi{
-      display:grid; grid-template-columns: repeat(3,1fr); gap:14px;
-    }
-    .quote{ font-style:italic; color:#064; font-size:1rem }
-    .author{ margin-top:8px; font-weight:800; color:#2a2a2a }
-
-    /* Gallery */
-    .gallery{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
-    .photo{ border-radius:10px; overflow:hidden; }
-
-    /* Footer */
-    footer.site-footer{
-      background: #1f6b20; color:white; padding:20px 0; margin-top:18px;
-      text-align:center; font-weight:700;
-    }
-
-    /* Reveal animations */
-    .fade-in{opacity:0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease;}
-    .slide-in-left{opacity:0; transform: translateX(-18px); transition: opacity .6s ease, transform .6s ease;}
-    .reveal.visible{opacity:1; transform:none}
-
-    /* Mobile responsive tweaks */
-    @media (max-width:900px){
-      nav.desktop-nav{display:none}
-      .mobile-toggle{display:block}
-      .brand .site-title{display:none} /* keep header compact */
-      .hero-grid{grid-template-columns:1fr; text-align:center}
-      .hero-card{order:2}
-      .actions {gap:8px}
-      .logo{width:54px;height:54px}
-      .hero-title{font-size:2.1rem}
-    }
-    @media (max-width:600px){
-      .logo{width:48px;height:48px}
-      .hero-title{font-size:1.9rem}
-      h2.section-title{font-size:1.25rem}
-      .card h3 { font-size:1rem }
-      .cta-phone{padding:7px 10px; font-size:0.92rem}
-    }
-    @media (max-width:420px){
-      /* Ensure header items stay on one line by reducing gaps */
-      .header-inner{gap:8px}
-      .actions{gap:6px}
-    }
-
-    /* Mobile nav overlay */
-    .mobile-nav{position:fixed; inset:0; background: rgba(6,10,6,0.6); display:none; z-index:80;}
-    .mobile-panel{position:fixed; right:0; top:0; height:100%; width:78%; max-width:320px; background:white; padding:20px; transform: translateX(12%); transition: transform .28s ease; box-shadow: -8px 0 32px rgba(6,10,6,0.2);}
-    .mobile-panel a{display:block; padding:12px 6px; color:#173; font-weight:700; text-decoration:none}
-    .mobile-nav.open{display:block}
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <!-- Remplace logo.png par ton fichier -->
-        <img src="logo.png" alt="Logo Gazon Laflamme" class="logo" />
-        <div>
-          <div class="site-title">Gazon Laflamme</div>
-          <div class="site-sub">Pour un gazon qui enflamme le voisinage</div>
-        </div>
-      </div>
+<header>
+  <img src="logo-placeholder.png" alt="Logo Gazon Laflamme">
+  <h1>Gazon Laflamme</h1>
+</header>
 
-      <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#apropos">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#quartiers">Quartiers</a>
-        <a href="#temoignages">Témoignages</a>
-        <a href="#realisations">Réalisations</a>
-      </nav>
+<nav>
+  <a href="#services">Services</a>
+  <a href="#quartiers">Quartiers</a>
+  <a href="#temoignages">Témoignages</a>
+  <a href="#realisations">Réalisations</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-      <div class="actions">
-        <!-- Téléphone affiché horizontalement (nowrap) -->
-        <a href="tel:8197432962" class="cta-phone" aria-label="Appeler 819-743-2962">819-743-2962</a>
-        <button class="mobile-toggle" aria-label="Ouvrir le menu" id="mobileToggle">☰</button>
-      </div>
-    </div>
+<section id="apropos">
+  <h2>À propos</h2>
+  <p>Chez Gazon Laflamme, nous offrons un service professionnel d'entretien extérieur pour que votre terrain soit toujours impeccable. Fiabilité, rapidité et satisfaction garantie !</p>
+</section>
+
+<section id="services">
+  <h2>Services offerts</h2>
+  <div class="services">
+    <div class="card">Tonte de gazon</div>
+    <div class="card">Fertilisation de gazon</div>
+    <div class="card">Ramassage de feuilles / mauvaise herbe</div>
+    <div class="card">Autres petits travaux extérieurs</div>
   </div>
+</section>
 
-  <!-- Mobile nav -->
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-    <div class="mobile-panel" role="dialog" aria-label="Menu mobile">
-      <button id="closeMobile" aria-label="Fermer le menu" style="float:right;border:0;background:none;font-size:20px">✕</button>
-      <nav style="margin-top:36px">
-        <a href="#apropos" class="mobile-link">À propos</a>
-        <a href="#services" class="mobile-link">Services</a>
-        <a href="#quartiers" class="mobile-link">Quartiers</a>
-        <a href="#temoignages" class="mobile-link">Témoignages</a>
-        <a href="#realisations" class="mobile-link">Réalisations</a>
-        <a href="tel:8197432962" style="display:block;margin-top:18px;padding:12px;border-radius:8px;background:#e9f7ec;color:#1f5b21;text-decoration:none;font-weight:800;text-align:center">Appeler : 819-743-2962</a>
-        <a href="mailto:charleslaflamme10@gmail.com" style="display:block;margin-top:12px;padding:10px;border-radius:8px;background:#f3fdf3;color:#1f5b21;text-decoration:none;font-weight:700;text-align:center">Courriel : charleslaflamme10@gmail.com</a>
-      </nav>
-    </div>
+<section id="quartiers">
+  <h2>Quartiers desservis</h2>
+  <p>Limbour, Hautes-Plaines, Templeton-Ouest</p>
+</section>
+
+<section id="temoignages">
+  <h2>Témoignages</h2>
+  <div class="temoignages">
+    <div class="card">« Service impeccable ! Mon gazon n’a jamais été aussi beau. » – Marc D.</div>
+    <div class="card">« Ponctuel, efficace et sympathique. » – Julie L.</div>
+    <div class="card">« Travail soigné à un prix honnête. » – Sophie T.</div>
   </div>
+</section>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 class="hero-title fade-in">Service professionnel d'entretien extérieur</h1>
-        <p class="hero-lead fade-in">Tonte, fertilisation, ramassage de feuilles & mauvaises herbes — services rapides et soignés pour Limbour, Hautes-Plaines et Templeton-Ouest.</p>
+<section id="realisations">
+  <h2>Nos réalisations</h2>
+  <div class="realisations">
+    <div class="card"><img src="image1-placeholder.jpg" alt=""><p>Entretien complet d’un terrain.</p></div>
+    <div class="card"><img src="image2-placeholder.jpg" alt=""><p>Résultat après fertilisation et coupe précise.</p></div>
+  </div>
+</section>
 
-        <div class="hero-card fade-in">
-          <div class="quick-list">
-            <div>Tonte & bordures — résultat net</div>
-            <div>Fertilisation de gazon — pour une croissance saine</div>
-            <div>Ramassage de feuilles / mauvaise herbe — entretien saisonnier</div>
-          </div>
-        </div>
-      </div>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-info">
+    <span>📞 819-743-2962</span>
+    <span>✉️ charleslaflamme10@gmail.com</span>
+  </div>
+</section>
 
-      <div class="hero-card fade-in" aria-hidden="false">
-        <strong>Contact rapide</strong>
-        <p style="margin:10px 0 6px">Appelle maintenant :</p>
-        <a href="tel:8197432962" class="cta-phone" style="display:inline-block">819-743-2962</a>
-        <p style="margin-top:10px;font-size:0.95rem;color:var(--muted)">Ou écris : <a href="mailto:charleslaflamme10@gmail.com" style="color:var(--green-600);font-weight:800;text-decoration:underline">charleslaflamme10@gmail.com</a></p>
-      </div>
-    </div>
-  </header>
+<footer>
+  <p>&copy; 2025 Gazon Laflamme. Tous droits réservés.</p>
+</footer>
 
-  <!-- A PROPOS / Présentation -->
-  <main>
-    <section id="apropos" class="container">
-      <h2 class="section-title">À propos</h2>
-      <div class="card">
-        <p style="margin:0;font-size:1rem;color:var(--muted)">
-          Je suis Charles, jeune travaillant, prêt à répondre à tous vos besoins en entretien extérieur. Mon objectif : vous offrir un service de qualité et un résultat impeccable. J’offre des services réguliers et des interventions ponctuelles selon vos besoins — toujours avec soin et ponctualité.
-        </p>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="container">
-      <h2 class="section-title">Services</h2>
-      <div class="grid">
-        <div class="card reveal fade-in">
-          <h3>Tonte de gazon</h3>
-          <p>Coupe régulière, bordures nettes et évacuation des résidus.</p>
-        </div>
-        <div class="card reveal fade-in">
-          <h3>Lavage d’auto</h3>
-          <p>Nettoyage extérieur soigné et rapide à prix compétitif.</p>
-        </div>
-        <div class="card reveal fade-in">
-          <h3>Fertilisation de gazon</h3>
-          <p>Programme adapté selon la saison pour un feuillage dense et sain.</p>
-        </div>
-        <div class="card reveal fade-in">
-          <h3>Ramassage de feuilles / mauvaise herbe</h3>
-          <p>Nettoyage automnal et contrôle manuel des mauvaises herbes.</p>
-        </div>
-        <div class="card reveal fade-in">
-          <h3>Autres petits travaux extérieurs</h3>
-          <p>Petits déblayages, nettoyage de bordures, et entretien général.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quartiers -->
-    <section id="quartiers" class="container">
-      <h2 class="section-title">Quartiers desservis</h2>
-      <p class="reveal slide-in-left" style="font-weight:700">Limbour — Hautes-Plaines — Templeton-Ouest</p>
-    </section>
-
-    <!-- Témoignages -->
-    <section id="temoignages" class="container">
-      <h2 class="section-title">Témoignages</h2>
-      <div class="testi">
-        <div class="card reveal fade-in">
-          <p class="quote">« Vraiment impressionné par la qualité. Mon gazon a l'air neuf ! »</p>
-          <div class="author">— Marc D.</div>
-        </div>
-        <div class="card reveal fade-in">
-          <p class="quote">« Travail rapide, efficace et très sympathique. À recommander ! »</p>
-          <div class="author">— Julie L.</div>
-        </div>
-        <div class="card reveal fade-in">
-          <p class="quote">« Prix honnête et résultat propre. On m’a donné une belle estimation. »</p>
-          <div class="author">— Sophie T.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Réalisations -->
-    <section id="realisations" class="container">
-      <h2 class="section-title">Nos réalisations</h2>
-      <div class="gallery">
-        <figure class="photo card reveal fade-in">
-          <img src="photo1.jpg" alt="Réalisations — projet 1 (ex : tonte et fertilisation)" />
-          <figcaption style="padding-top:8px;font-weight:700">Entretien complet d’un terrain résidentiel</figcaption>
-        </figure>
-
-        <figure class="photo card reveal fade-in">
-          <img src="photo2.jpg" alt="Réalisations — projet 2 (ex : après fertilisation)" />
-          <figcaption style="padding-top:8px;font-weight:700">Résultat après fertilisation et coupe précise</figcaption>
-        </figure>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div style="font-size:1.05rem">Contact : <a href="tel:8197432962" style="color:white;text-decoration:underline">819-743-2962</a> — <a href="mailto:charleslaflamme10@gmail.com" style="color:white;text-decoration:underline">charleslaflamme10@gmail.com</a></div>
-      <div style="margin-top:8px;font-size:0.95rem;opacity:0.95">© <span id="year"></span> Gazon Laflamme</div>
-    </div>
-  </footer>
-
-  <script>
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggles
-    const mobileToggle = document.getElementById('mobileToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const closeMobile = document.getElementById('closeMobile');
-    mobileToggle?.addEventListener('click', () => {
-      mobileNav.classList.add('open');
-      mobileNav.setAttribute('aria-hidden','false');
-    });
-    closeMobile?.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      mobileNav.setAttribute('aria-hidden','true');
-    });
-    document.querySelectorAll('.mobile-link').forEach(a=>{
-      a.addEventListener('click', ()=> {
-        mobileNav.classList.remove('open');
-        mobileNav.setAttribute('aria-hidden','true');
-      });
-    });
-
-    // Reveal animation
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.12});
-    reveals.forEach(el => obs.observe(el));
-
-    // Close mobile nav on Escape
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') {
-        mobileNav.classList.remove('open');
-        mobileNav.setAttribute('aria-hidden','true');
-      }
-    });
-
-    // CTA phone micro-interaction
-    document.querySelectorAll('.cta-phone').forEach(btn=>{
-      btn.addEventListener('click', ()=> {
-        btn.style.transform = 'translateY(-2px)';
-        setTimeout(()=>btn.style.transform = '', 150);
-      });
-    });
-  </script>
 </body>
 </html>
